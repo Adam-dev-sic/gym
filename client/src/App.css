@@ -1,0 +1,545 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "CoolFont";
+  src: url("/fonts/Another Danger.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AlternativeCoolFont";
+  src: url("/fonts/JMH Typewriter.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "myFont";
+  src: url("/fonts/JMH Typewriter-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bloody";
+  src: url("/fonts/Blood & Horror.otf") format("truetype");
+}
+.gym,
+.calisthenics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column: 1fr 1fr;
+}
+
+.gym img,
+.calisthenics img {
+  width: 250px;
+  height: 250px;
+  padding: 3px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: solid 3px rgb(34, 28, 28);
+  opacity: 0.5;
+}
+
+.gym img:hover,
+.calisthenics img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  border: 3px solid rgb(75, 73, 73);
+  opacity: 1;
+}
+/* .calisthenics img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+} */
+
+#container {
+  background-color: rgb(26, 21, 21);
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100px;
+  background-color: rgb(26, 21, 21);
+}
+
+header button {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px rgb(75, 73, 73);
+  margin-right: 20px;
+  width: 130px;
+  height: 70px;
+  background-color: rgb(26, 21, 21);
+  color: white;
+  font-size: 20px;
+}
+
+header button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+header button:focus {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+}
+
+.h1Links {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline 3px;
+  text-decoration-color: rgb(75, 73, 73);
+  margin-bottom: 15px;
+  font-family: "CoolFont", sans-serif;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: rgb(26, 21, 21);
+}
+
+footer button {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px rgb(75, 73, 73);
+  width: 190px;
+  height: 70px;
+  background-color: rgb(26, 21, 21);
+  color: white;
+  font-size: 20px;
+}
+footer button:hover {
+  background-color: rgb(75, 73, 73);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gymContainer,
+.calisthenicsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgb(26, 21, 21);
+}
+
+.gymContainer img,
+.calisthenicsContainer img {
+  width: 250px;
+  height: 250px;
+  padding: 3px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: solid 3px rgb(34, 28, 28);
+  text-align: center;
+  align-self: center;
+  /* opacity: 0.5; */
+  justify-self: center;
+}
+
+header button {
+  font-family: "CoolFont", sans-serif;
+}
+
+.gymContainer img:hover,
+.calisthenicsContainer img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  border: 3px solid rgb(41, 1, 1);
+  background-color: rgb(41, 1, 1);
+}
+
+.gymContainer span {
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.gymContainer h3,
+.calisthenicsContainer h3 {
+  color: white;
+  font-size: 24px;
+  margin-left: 10px;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+  text-align: center;
+}
+
+.gymContainer button,
+.calisthenicsContainer button {
+  border: 5px solid rgb(26, 24, 24);
+  border-radius: 10px;
+  width: 165px;
+  height: 100%;
+  background-color: rgb(46, 48, 58);
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+
+.gymContainer .cards,
+.calisthenicsContainer .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 360px;
+  background-color: rgba(39, 37, 41, 0.575);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 18px;
+  border: 5px solid rgb(34, 28, 28);
+}
+
+.h3Decoration {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.gymContainer button:hover,
+.calisthenicsContainer button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  transform: scale(1.15);
+  font-family: "coolFont", sans-serif;
+  cursor: pointer;
+}
+
+.workoutPage {
+  background-color: rgb(26, 21, 21);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 750px 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  height: 100%;
+  color: white;
+}
+
+.workoutPage h1 {
+  font-size: 50px;
+  font-family: "CoolFont", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.workoutPage video {
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+.workoutPage p {
+  font-size: 23px;
+  margin: 20px 0;
+  text-align: center;
+  font-family: "myFont", sans-serif;
+  width: 70%;
+}
+
+.workoutPage h2 {
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+  font-family: "CoolFont", sans-serif;
+}
+.workoutPage ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.workoutPage ul h3 {
+  font-family: "coolFont", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+footer button {
+  font-family: "CoolFont", sans-serif;
+}
+
+.programs {
+  background-color: rgb(26, 21, 21);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.programMaking h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-family: "CoolFont", sans-serif;
+}
+.programCard {
+  border: solid 3px rgb(75, 73, 73);
+  border-radius: 10px;
+  width: 90%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.programCard h1 {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  font-family: "Bloody", sans-serif;
+  margin-bottom: 30px;
+}
+
+.programs button {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px rgb(75, 73, 73);
+  margin-right: 20px;
+  width: 180px;
+  height: 70px;
+  background-color: rgb(26, 21, 21);
+  color: white;
+  font-size: 20px;
+  font-family: "CoolFont", sans-serif;
+}
+
+.programMaking {
+  background-color: rgb(26, 21, 21);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.programCard a {
+  text-decoration: none;
+}
+
+.programCard a:hover {
+  text-decoration: underline;
+  color: rgb(75, 73, 73);
+}
+
+.programCard button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.programMaking form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+.programMaking form input,
+.programMaking form textarea {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid rgb(75, 73, 73);
+  border-radius: 5px;
+  background-color: rgb(37, 35, 43);
+  color: white;
+  font-size: 20px;
+  font-family: "Bloody", sans-serif;
+}
+
+.programMaking form button {
+  width: 230px;
+  padding: 10px;
+  background-color: rgb(46, 48, 58);
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 50px;
+  font-family: "Bloody", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 3px solid rgb(34, 28, 28);
+}
+
+.programMaking label {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 5px;
+  font-family: "Bloody", sans-serif;
+}
+
+.programMaking form input:focus,
+.programMaking form textarea:focus {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border: 2px solid rgb(75, 73, 73);
+  outline: none;
+  border-radius: 5px;
+}
+
+.programMaking form button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  transform: scale(1.05);
+  font-family: "CoolFont", sans-serif;
+  cursor: pointer;
+}
+
+.programButton {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px rgb(75, 73, 73);
+  margin-right: 20px;
+  width: 180px;
+  height: 70px;
+  background-color: rgb(26, 21, 21);
+  color: white;
+  font-size: 20px;
+  font-family: "CoolFont", sans-serif;
+}
+
+.programButton:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.programDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.programDiv-content {
+  background: #222;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  color: white;
+  min-width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+  font-family: "Bloody", sans-serif;
+}
+
+.programDiv-content button {
+  background-color: rgb(46, 48, 58);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bloody", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 3px solid rgb(34, 28, 28);
+  width: 130px;
+  font-size: 20px;
+}
+
+.programDiv-content button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "CoolFont", sans-serif;
+  transform: scale(1.05);
+}
+.programDiv > div,
+.programDiv-content {
+  background: #222;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  color: white;
+  min-width: 300px;
+  min-height: 150px;
+  text-align: center;
+}
+.programCards {
+  border: solid 3px rgb(75, 73, 73);
+  border-radius: 10px;
+  width: 90%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.closeProgram {
+  width: 250px;
+}
+
+.programWorkouts {
+  background-color: rgb(26, 21, 21);
+}
+
+.backButton {
+  border: 5px solid rgb(26, 24, 24);
+  border-radius: 10px;
+  width: 165px;
+  height: 100%;
+  background-color: rgb(46, 48, 58);
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+
+.backButton:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  transform: scale(1.1);
+  font-family: "CoolFont", sans-serif;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}

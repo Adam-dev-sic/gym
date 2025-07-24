@@ -1,57 +1,57 @@
+import { Link } from "react-router-dom";
 function FrontPage() {
   return (
     <>
       <div id="container">
+        <Link className="h1Links" to="/gym">
+          {" "}
+          <h1 className="h1Links">Gym excercises</h1>
+        </Link>
         <div className="gym">
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
             <img src="gymWorkouts/Chest/Barbell Bench Press.gif" alt="" />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>
             <img src="gymWorkouts/Chest/Dumbbell Chest Fly.gif" alt="" />
           </div>
           <div className="gymCards">
             {" "}
-            <h4>this exercise hit ur X </h4>{" "}
             <img src="gymWorkouts/Chest/Decline Dumbbell Fly.gif" alt="" />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
             <img
               src="gymWorkouts/Tricep/EZ-Bar Seated Triceps Extension.gif"
               alt=""
             />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
-            <img src="gymWorkouts/Tricep/Machine Reverse Flyes.gif" alt="" />
+            <img
+              src="gymWorkouts/Tricep/Lying EZ-Bar Triceps Extension.gif"
+              alt=""
+            />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
             <img src="gymWorkouts/Tricep/Machine Triceps Pushdown.gif" alt="" />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
             <img
               src="gymWorkouts/Tricep/Machine Triceps Extension.gif"
               alt=""
             />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>{" "}
             <img src="gymWorkouts/Shoulder/Cable Face Pull.gif" alt="" />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>
             <img src="gymWorkouts/Shoulder/Cable Front Raise.gif" alt="" />
           </div>
           <div className="gymCards">
-            <h4>this exercise hit ur X </h4>
             <img src="gymWorkouts/Shoulder/Machine Reverse Flyes.gif" alt="" />
           </div>
-          <h3>See More</h3>
         </div>
+        <Link className="h1Links" to="/calisthenics">
+          <h1  className="h1Links">Calisthenics excercises</h1>
+        </Link>
         <div className="calisthenics">
           <div className="calisthenicsCard">
             <h4></h4> <img src="calisthenics/Chest/Archer Push-Up.gif" alt="" />
@@ -78,7 +78,7 @@ function FrontPage() {
             />
           </div>
           <div className="calisthenicsCard">
-            <h4>Exercise</h4>{" "}
+         
             <img src="calisthenics/Tricep/Weighted Bench Dips.gif" alt="" />
           </div>
           <div className="calisthenicsCard">
@@ -90,11 +90,13 @@ function FrontPage() {
           </div>
           <div className="calisthenicsCard">
             <h4></h4>{" "}
-            <img src="calisthenics/Shoulder/Handstand Push-Up" alt="" />
+            <img src="calisthenics/Shoulder/Handstand Push-Up.gif" alt="" />
           </div>
-          <h3>See More</h3>
+     
         </div>
       </div>
     </>
   );
 }
+
+export default FrontPage;
