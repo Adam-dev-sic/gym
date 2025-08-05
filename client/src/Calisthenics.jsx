@@ -291,7 +291,7 @@ const Calisthenics = () => {
             </div>
           ))}
           <button className="closeProgram" onClick={toggleProgramDiv}>
-            Close Program
+            Close 
           </button>
           {/* Add your program creation logic here */}
         </div>

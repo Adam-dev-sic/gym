@@ -126,7 +126,6 @@ function Program() {
                         />
                         <h3>{workout}</h3>
                       </Link>
-                      
                       <button
                         onClick={() =>
                           deleteWorkout(workout, programCards.workoutgif[index])

@@ -116,6 +116,112 @@ app.delete("/programs", async (req, res) => {
   });
 });
 
+app.post("/foodprograms", async (req, res) => {
+  const { foodprogramname } = req.body;
+  const foodProgram = await prisma.foods.create({
+    data: {
+      foodprogramname,
+    },
+  });
+  res.json(foodProgram);
+});
+
+app.get("/foodprograms", async (req, res) => {
+  const foodPrograms = await prisma.foods.findMany();
+  sortedFoodPrograms = foodPrograms.sort((a, b) => a.id - b.id);
+  res.json(sortedFoodPrograms);
+});
+
+app.delete("/foodprograms", async (req, res) => {
+  const { id } = req.body;
+  await prisma.foods.delete({
+    where: { id: parseInt(id) },
+  });
+  res.status(204).send();
+});
+
+app.get("/foodprograms/:id", async (req, res) => {
+  const { id } = req.params;
+  const foodProgram = await prisma.foods.findUnique({
+    where: { id: parseInt(id) },
+  });
+  res.json(foodProgram);
+});
+
+app.post("/foodprograms/:id", async (req, res) => {
+  const { id } = req.params;
+  const { foodname, foodpic, foodquantity, foodcalories, foodprotein } =
+    req.body;
+  const foodProgram = await prisma.foods.findUnique({
+    where: { id: parseInt(id) },
+  });
+  if (!foodProgram) {
+    return res.status(404).json({ error: "Food program not found" });
+  }
+  if (foodProgram.foodname.includes(foodname)) {
+    return res.status(400).json({ error: "Food already in program" });
+  }
+  const updated = await prisma.foods.update({
+    where: { id: parseInt(id) },
+    data: {
+      foodname: { set: [...(foodProgram.foodname || []), foodname] },
+      foodpic: { set: [...(foodProgram.foodpic || []), foodpic] },
+      foodquantity: {
+        set: [...(foodProgram.foodquantity || []), foodquantity],
+      },
+      foodcalories: {
+        set: [...(foodProgram.foodcalories || []), foodcalories],
+      },
+      foodprotein: { set: [...(foodProgram.foodprotein || []), foodprotein] },
+    },
+  });
+  res.json(updated);
+});
+
+app.get("/foodprograms/:id", async (req, res) => {
+  const { id } = req.params;
+  const foods = await prisma.foods.findUnique({
+    where: { id: parseInt(id) },
+  });
+  res.json(foods);
+});
+
+app.delete("/foodprograms/:id", async (req, res) => {
+  const { id } = req.params;
+  const { foodname } = req.body;
+  const foodProgram = await prisma.foods.findUnique({
+    where: { id: parseInt(id) },
+  });
+  if (!foodProgram) {
+    return res.status(404).json({ error: "Food program not found" });
+  }
+  const nameIndex = foodProgram.foodname.indexOf(foodname);
+  if (nameIndex === -1) {
+    return res.status(404).json({ error: "Food not found in program" });
+  }
+  const newFoodNames = [...foodProgram.foodname];
+  const newFoodPics = [...(foodProgram.foodpic || [])];
+  const newFoodQuantities = [...(foodProgram.foodquantity || [])];
+  const newFoodCalories = [...(foodProgram.foodcalories || [])];
+  const newFoodProteins = [...(foodProgram.foodprotein || [])];
+  newFoodNames.splice(nameIndex, 1);
+  newFoodPics.splice(nameIndex, 1);
+  newFoodQuantities.splice(nameIndex, 1);
+  newFoodCalories.splice(nameIndex, 1);
+  newFoodProteins.splice(nameIndex, 1);
+  const updated = await prisma.foods.update({
+    where: { id: parseInt(id) },
+    data: {
+      foodname: { set: newFoodNames },
+      foodpic: { set: newFoodPics },
+      foodquantity: { set: newFoodQuantities },
+      foodcalories: { set: newFoodCalories },
+      foodprotein: { set: newFoodProteins },
+    },
+  });
+  res.json(updated);
+});
+
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");
 });

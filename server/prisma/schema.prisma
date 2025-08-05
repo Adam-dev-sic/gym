@@ -15,8 +15,18 @@ datasource db {
 }
 
 model workouts {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   programname String
   workoutname String[]
   workoutgif  String[]
+}
+
+model foods {
+  id              Int      @id @default(autoincrement())
+  foodprogramname String
+  foodname        String[]
+  foodpic         String[]
+  foodcalories    Int[]
+  foodprotein     Int[]
+  foodquantity    String[]
 }

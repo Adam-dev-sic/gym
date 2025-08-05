@@ -60,10 +60,11 @@
 
 header {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   background-color: rgb(26, 21, 21);
+  padding: 0px 20px;
 }
 
 header button {
@@ -285,19 +286,22 @@ footer button {
   font-family: "CoolFont", sans-serif;
 }
 
-.programs {
+.programs,
+.food-programs {
   background-color: rgb(26, 21, 21);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.programMaking h2 {
+.programMaking h2,
+.foodprogram h2 {
   font-size: 25px;
   text-align: center;
   margin-bottom: 20px;
   color: white;
   font-family: "CoolFont", sans-serif;
 }
-.programCard {
+.programCard,
+.food-program-card {
   border: solid 3px rgb(75, 73, 73);
   border-radius: 10px;
   width: 90%;
@@ -310,7 +314,8 @@ footer button {
   padding: 10px;
 }
 
-.programCard h1 {
+.programCard h1,
+.food-program-card h1 {
   text-decoration: none;
   color: white;
   font-size: 30px;
@@ -318,7 +323,8 @@ footer button {
   margin-bottom: 30px;
 }
 
-.programs button {
+.programs button,
+.food-programs button {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
@@ -332,7 +338,8 @@ footer button {
   font-family: "CoolFont", sans-serif;
 }
 
-.programMaking {
+.programMaking,
+.foodprogram {
   background-color: rgb(26, 21, 21);
   color: white;
   display: grid;
@@ -341,23 +348,27 @@ footer button {
   justify-content: center;
 }
 
-.programCard a {
+.programCard a,
+.food-program-card a {
   text-decoration: none;
 }
 
-.programCard a:hover {
+.programCard a:hover,
+.food-program-card a:hover {
   text-decoration: underline;
   color: rgb(75, 73, 73);
 }
 
-.programCard button:hover {
+.programCard button:hover,
+.food-program-card button:hover {
   background-color: rgb(41, 1, 1);
   color: white;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.programMaking form {
+.programMaking form,
+.foodprogram form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -365,7 +376,9 @@ footer button {
   width: 80%;
 }
 .programMaking form input,
-.programMaking form textarea {
+.programMaking form textarea,
+.foodprogram form input,
+.foodprogram form textarea {
   width: 300px;
   padding: 10px;
   margin: 10px 0;
@@ -377,7 +390,8 @@ footer button {
   font-family: "Bloody", sans-serif;
 }
 
-.programMaking form button {
+.programMaking form button,
+.foodprogram form button {
   width: 230px;
   padding: 10px;
   background-color: rgb(46, 48, 58);
@@ -391,7 +405,8 @@ footer button {
   border: 3px solid rgb(34, 28, 28);
 }
 
-.programMaking label {
+.programMaking label,
+.foodprogram label {
   color: white;
   font-size: 25px;
   margin-bottom: 5px;
@@ -399,7 +414,9 @@ footer button {
 }
 
 .programMaking form input:focus,
-.programMaking form textarea:focus {
+.programMaking form textarea:focus,
+.foodprogram form input:focus,
+.foodprogram form textarea:focus {
   background-color: rgb(41, 1, 1);
   color: white;
   border: 2px solid rgb(75, 73, 73);
@@ -407,7 +424,8 @@ footer button {
   border-radius: 5px;
 }
 
-.programMaking form button:hover {
+.programMaking form button:hover,
+.foodprogram form button:hover {
   background-color: rgb(41, 1, 1);
   color: white;
   border-radius: 10px;
@@ -416,21 +434,24 @@ footer button {
   cursor: pointer;
 }
 
-.programButton {
+.programButton,
+.foodProgramButton {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   border-bottom: solid 3px rgb(75, 73, 73);
-  margin-right: 20px;
+  margin-left: 20px;
   width: 180px;
   height: 70px;
   background-color: rgb(26, 21, 21);
   color: white;
   font-size: 20px;
   font-family: "CoolFont", sans-serif;
+
 }
 
-.programButton:hover {
+.programButton:hover,
+.foodProgramButton:hover {
   background-color: rgb(41, 1, 1);
   color: white;
   border-radius: 10px;
@@ -496,21 +517,10 @@ footer button {
   min-height: 150px;
   text-align: center;
 }
-.programCards {
-  border: solid 3px rgb(75, 73, 73);
-  border-radius: 10px;
-  width: 90%;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  padding: 10px;
-}
 
 .closeProgram {
   width: 250px;
+  margin-top: 30px;
 }
 
 .programWorkouts {
@@ -540,6 +550,263 @@ footer button {
   cursor: pointer;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between buttons */
+  margin-left: auto;
+}
+
+.svgImg {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+.svgImg:hover {
+  transform: scale(1.05) rotate(40deg);
+  transition: transform 0.3s ease-in-out;
+  color: rgb(75, 73, 73);
+}
+
+.foodContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgb(26, 21, 21);
+}
+
+.foodCard button {
+  border: 5px solid rgb(26, 24, 24);
+  border-radius: 10px;
+  width: 165px;
+  height: 45px;
+  background-color: rgb(46, 48, 58);
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+
+.foodCard button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  transform: scale(1.1);
+  font-family: "CoolFont", sans-serif;
+  cursor: pointer;
+}
+
+.foodCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 450px;
+  background-color: rgba(39, 37, 41, 0.575);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 18px;
+  border: 5px solid rgb(34, 28, 28);
+}
+
+.foodCard h3 {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-family: "AlternativeCoolFont", sans-serif;
+}
+.foodCard img {
+  width: 250px;
+  height: 250px;
+  padding: 3px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: solid 3px rgb(34, 28, 28);
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  object-fit: cover;
+  object-position: center;
+}
+
+.minorDetails {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.foodQuantity {
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+
+.foodCalories {
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+/* Add to your CSS file */
+.circleDetail {
+  width: 80px;
+  height: 80px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: "Bloody", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  border: 5px solid rgb(26, 24, 24);
+}
+
+.foodDetailsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.foodDetails {
+  background: #161212;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  color: white;
+  min-width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+  font-family: "myFont", sans-serif;
+  font-size: 25px;
+}
+
+.foodDetails button {
+  border: 5px solid rgb(26, 24, 24);
+  border-radius: 10px;
+  width: 165px;
+  height: 45px;
+  background-color: rgb(46, 48, 58);
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Bloody", sans-serif;
+}
+
+.foodDetails button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  transform: scale(1.1);
+  font-family: "CoolFont", sans-serif;
+  cursor: pointer;
+}
+
+.foodDetails img {
+  width: 120px;
+  height: 120px;
+}
+
+.foodProtein {
+  font-size: 20px;
+}
+
+
+.diet h1 {
+  font-size: 50px;
+  font-family: "CoolFont", sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+.diet p {
+  font-size: 23px;
+  margin: 20px 0;
+  text-align: center;
+  font-family: "myFont", sans-serif;
+  width: 85%;
+  margin-left: 140px;
+}
+
+.diet button{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px rgb(75, 73, 73);
+  margin-right: 20px;
+  width: 180px;
+  height: 70px;
+  background-color: rgb(26, 21, 21);
+  color: white;
+  font-size: 20px;
+  font-family: "CoolFont", sans-serif;
+  margin-bottom: 25px;
+}
+
+.diet button:hover {
+  background-color: rgb(41, 1, 1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.diet{
+  background-color: rgb(26, 21, 21);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.diet a{
+  text-align: center;
+}
+
+
+.foodProgramDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(26, 21, 21);
+}
+
+.foodProgramDetails h1 {
+  font-size: 30px;
+  color: white;
+  font-family: "Bloody", sans-serif;
+}
+.foodProgramDetails p {
+  font-size: 20px;
+  color: white;
+  font-family: "Myfont", sans-serif;
 }
