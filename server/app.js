@@ -218,17 +218,9 @@ app.delete("/foodprograms/:id", async (req, res) => {
   res.json(updated);
 });
 
-const indexPath = path.join(__dirname, "../client/dist", "index.html");
-
-if (process.env.NODE_ENV === "production") {
-  app.get("*", (req, res) => {
-    if (fs.existsSync(indexPath)) {
-      res.sendFile(indexPath);
-    } else {
-      res.status(500).send("Frontend build not found");
-    }
-  });
-}
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
 // Catch-all: send back React's index.html for any route not handled above
 
 const PORT = process.env.PORT || 3000;
