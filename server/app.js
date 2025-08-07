@@ -15,8 +15,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
-
-
 app.post("/programs", async (req, res) => {
   const { programname } = req.body;
 
@@ -124,6 +122,7 @@ app.delete("/programs", async (req, res) => {
   await prisma.workouts.delete({
     where: { id: parseInt(id) },
   });
+  res.status(204).send(); // <-- add this
 });
 
 app.post("/foodprograms", async (req, res) => {
@@ -186,14 +185,6 @@ app.post("/foodprograms/:id", async (req, res) => {
     },
   });
   res.json(updated);
-});
-
-app.get("/foodprograms/:id", async (req, res) => {
-  const { id } = req.params;
-  const foods = await prisma.foods.findUnique({
-    where: { id: parseInt(id) },
-  });
-  res.json(foods);
 });
 
 app.delete("/foodprograms/:id", async (req, res) => {

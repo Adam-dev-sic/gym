@@ -68,7 +68,7 @@ function Program() {
     setProgramCards(programData);
   };
   useEffect(() => {
-    if (id) {
+    if (id) { 
       currentProgram(id);
     }
   }, [id]);
