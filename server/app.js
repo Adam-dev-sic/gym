@@ -10,11 +10,6 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// Catch-all: send back React's index.html for any route not handled above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-});
-
 app.post("/programs", async (req, res) => {
   const { programname } = req.body;
 
@@ -222,6 +217,13 @@ app.delete("/foodprograms/:id", async (req, res) => {
   });
   res.json(updated);
 });
+
+
+// Catch-all: send back React's index.html for any route not handled above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
