@@ -7,8 +7,7 @@ const path = require("path");
 
 app.use(cors());
 app.use(express.json());
-
-
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.post("/programs", async (req, res) => {
   const { programname } = req.body;
@@ -218,8 +217,18 @@ app.delete("/foodprograms/:id", async (req, res) => {
   res.json(updated);
 });
 
-// Catch-all: send back React's index.html for any route not handled above
+const indexPath = path.join(__dirname, "../client/dist", "index.html");
 
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    if (fs.existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      res.status(500).send("Frontend build not found");
+    }
+  });
+}
+// Catch-all: send back React's index.html for any route not handled above
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
