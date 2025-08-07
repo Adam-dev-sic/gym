@@ -3,9 +3,19 @@ const app = express();
 const { PrismaClient } = require("./generated/prisma");
 const prisma = new PrismaClient();
 const cors = require("cors");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+// Catch-all: send back React's index.html for any route not handled above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
+
 
 app.post("/programs", async (req, res) => {
   const { programname } = req.body;
