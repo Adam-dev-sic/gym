@@ -4,6 +4,7 @@ const { PrismaClient } = require("./generated/prisma");
 const prisma = new PrismaClient();
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 
 app.use(cors());
 app.use(express.json());
