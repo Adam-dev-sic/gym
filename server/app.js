@@ -218,12 +218,12 @@ app.delete("/foodprograms/:id", async (req, res) => {
   res.json(updated);
 });
 
-app.get("/*", (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 // Catch-all: send back React's index.html for any route not handled above
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
